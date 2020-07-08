@@ -7,3 +7,25 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct Hero: Identifiable {
+    let id: UUID = UUID()
+    let name: String
+}
+struct ListView: View {
+   
+    let heros = [
+    Hero(name: "Iron Man"),
+    Hero(name: "Thor"),
+    Hero(name: "Spider-Man")
+    ]
+    
+    var body: some View {
+        List(heros) { hero in
+            Text(hero.name)
+        }
+        
+    }
+}
+
